@@ -1,4 +1,4 @@
 ```git
 
-# Criar nova branch
-git checkout -b style
+# Create new branch
+<span style="color: blue;">git</span> checkout -b style
