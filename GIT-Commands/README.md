@@ -4,8 +4,13 @@ Comandos Git
 List of most used git commands.
 ___
 
+### Basic explanations
+| Command | Description |
+| ------- | --------- |
+| Git | Is a control system version, commonly used on software development to track changes and coordinate team work. Was created by Linus Torvalds in 2005
+| Staging area | Is a temporary space where you put the changes you want send to remote repository |
 
-### Getting & Creating Projects
+### Getting and creating projects
 | Command | Description |
 | ------- | --------- |
 | `git init` | Initialize a local git repository |
