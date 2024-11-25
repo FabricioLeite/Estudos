@@ -30,7 +30,7 @@ ___
 | `git add .` | Add all changed files to the staging area |
 | `git rm -r <file-name.txt>` | Remove a file or folder to the staging area |
 
-### Branches
+### Branch
 | Command | Description |
 | ------- | --------- |
 | `git branch` | List local branches |
@@ -46,12 +46,23 @@ ___
 | `git merge <branch-name>` | Merge a specified branch into the active branch |
 | `git merge <source-branch> <target-branch>` | Merge a specified branch into a target branch |
 | `git reset <commit-id>` | Reset the status of a local branch to the specified commit |
-| `git reset --hard <commit-id>` | Reset the status of a local branch to the specified commit, erasing all file changes not commited |
+| `git reset --hard <commit-id>` | Reset the status of a local branch to the specified commit, erasing all file changes uncommitted |
 | `git commit -m <commit-message>` | Create a new commit with all changes in stage area |
 | `git commit --amend <commit-message>` | Changes the last commit message if not sent to remote |
 | `git diff` | Show each line of code that was created ou changed and not staged yet |
 | `git diff --cached` | Show each line of code that was created ou changed, staged or not |
 | `git gui` | Open visual app |
+
+### Stash
+| Command | Description |
+| ------- | --------- |
+| `git stash` | Saves uncommitted local changes to the stash |
+| `git stash list` | List saved stashes |
+| `git stash apply <stash-index>` | Applies changes from a stash to the current branch |
+| `git stash pop <stash-index>` | Applies changes from a stash to the current branch and delete the stash |
+| `git stash show <stash-index>` | Show what is stored in the stash |
+| `git stash show -p <stash-index>` | Show details of what is stored in the stash |
+| `git stash clear` | Delete all stashes |
 
 ### Configuration
 | Command | Description |
