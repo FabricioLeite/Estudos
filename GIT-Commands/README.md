@@ -1,16 +1,16 @@
 GIT Commands
 ============
 
-List of most used git commands.
+The list of most used git commands.
 ___
 
 ### Basic explanations
 | Term | Description |
 | ------- | --------- |
-| Git | Is a control system version, commonly used on software development to track changes and coordinate team work. Was created by Linus Torvalds in 2005 |
-| Local repository | Is a local project repository that uses Git, usually linked to a remote repository |
-| Remote repository | Is a remote project repository that uses Git, you can clone it creating a local repository |
-| Staging area | Is a temporary space where you put the changes you want send to remote repository |
+| Git | It is a control system version, commonly used on software development to track changes and coordinate team work. It was created by Linus Torvalds in 2005 |
+| Local repository | It is a local project repository that uses Git, usually linked to a remote repository |
+| Remote repository | It is a remote project repository that uses Git, you can clone it creating a local repository |
+| Staging area | It is a temporary space where you put the changes you want send to remote repository |
 
 ### Get and create projects
 | Command | Description |
@@ -47,10 +47,10 @@ ___
 | `git merge <source-branch> <target-branch>` | Merge a specified branch into a target branch |
 | `git reset <commit-id>` | Reset the status of a local branch to the specified commit |
 | `git reset --hard <commit-id>` | Reset the status of a local branch to the specified commit, erasing all file changes uncommitted |
-| `git commit -m <commit-message>` | Create a new commit with all changes in stage area |
+| `git commit -m <commit-message>` | Create a new commit with the all changes in stage area |
 | `git commit --amend <commit-message>` | Changes the last commit message if not sent to remote |
-| `git diff` | Show each line of code that was created ou changed and not staged yet |
-| `git diff --cached` | Show each line of code that was created ou changed, staged or not |
+| `git diff` | Show each line of code that was created or changed and not staged yet |
+| `git diff --cached` | Show each line of code that was created or changed, staged or not |
 | `git gui` | Open visual app |
 
 ### Stash
