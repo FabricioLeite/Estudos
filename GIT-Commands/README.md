@@ -11,6 +11,7 @@ ___
 | Local repository | It is a local project repository that uses Git, usually linked to a remote repository |
 | Remote repository | It is a remote project repository that uses Git, you can clone it creating a local repository |
 | Staging area | It is a temporary space where you put the changes you want send to remote repository |
+| Cherry-pick | It is a resource that allows you bring specific commits from on branch to another branch |
 
 ### Get and create projects
 | Command | Description |
@@ -37,8 +38,8 @@ ___
 | `git branch <branch-name>`| Create a new branch based on active branch |
 | `git branch -a` | List local and remote branches |
 | `git branch -d <branch-name>`| Delete a local branch |
-| `git branch -m <current-branch-name> <new-branch-name>`| Delete a local branch |
 | `git push origin --d <branch-name>`| Delete a remote branch |
+| `git branch -m <current-branch-name> <new-branch-name>`| Change the branch name |
 | `git checkout <branch-name>` | Switch to a branch |
 | `git checkout -b <branch-name>` | Create a new branch based on active branch and switch to it |
 | `git checkout -b <branch-name> origin/<branch-name>` | Clone a remote branch and switch to it |
@@ -49,6 +50,9 @@ ___
 | `git reset --hard <commit-id>` | Reset the status of a local branch to the specified commit, erasing all file changes uncommitted |
 | `git commit -m <commit-message>` | Create a new commit with the all changes in stage area |
 | `git commit --amend <commit-message>` | Changes the last commit message if not sent to remote |
+| `git commit --allow-empty -m <commit-message>` | Force a commit even if it is empty |
+| `git push origin <branch-name>` | Push the local changes to remote branch |
+| `git log --oneline` | Show a minimalist log of commits |
 | `git diff` | Show each line of code that was created or changed and not staged yet |
 | `git diff --cached` | Show each line of code that was created or changed, staged or not |
 | `git gui` | Open visual app |
@@ -63,6 +67,14 @@ ___
 | `git stash show <stash-index>` | Show what is stored in the stash |
 | `git stash show -p <stash-index>` | Show details of what is stored in the stash |
 | `git stash clear` | Delete all stashes |
+
+### Cherry-pick
+| Command | Description |
+| ------- | --------- |
+| `git cherry-pick <commit-id>` | Bring only the specified commit to the current branch |
+| `git cherry-pick --continue` | Continue the cherry-pick in progress, after resolve the conflits |
+| `git cherry-pick --abort` | Abort the cherry-pick in progress |
+| `git cherry-pick --skip` | Ignore the cherry-pick in progress |
 
 ### Configuration
 | Command | Description |
