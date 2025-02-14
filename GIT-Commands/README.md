@@ -11,7 +11,7 @@ ___
 | Local repository | It is a local project repository that uses Git, usually linked to a remote repository |
 | Remote repository | It is a remote project repository that uses Git, you can clone it creating a local repository |
 | Staging area | It is a temporary space where you put the changes you want send to remote repository |
-| Cherry-pick | It is a resource that allows you bring specific commits from on branch to another branch |
+| Cherry-pick | It is a resource that allows you to bring specific commits from one branch to another |
 
 ### Get and create projects
 | Command | Description |
@@ -50,9 +50,9 @@ ___
 | `git reset --hard <commit-id>` | Reset the status of a local branch to the specified commit, erasing all file changes uncommitted |
 | `git commit -m <commit-message>` | Create a new commit with the all changes in stage area |
 | `git commit --amend <commit-message>` | Changes the last commit message if not sent to remote |
-| `git commit --allow-empty -m <commit-message>` | Force a commit even if it is empty |
-| `git push origin <branch-name>` | Push the local changes to remote branch |
-| `git log --oneline` | Show a minimalist log of commits |
+| `git commit --allow-empty -m <commit-message>` | Force creating a commit even if it's empty |
+| `git push origin <branch-name>` | Push local changes to the remote branch |
+| `git log --oneline` | Show a minimal log of commits |
 | `git diff` | Show each line of code that was created or changed and not staged yet |
 | `git diff --cached` | Show each line of code that was created or changed, staged or not |
 | `git gui` | Open visual app |
@@ -71,10 +71,10 @@ ___
 ### Cherry-pick
 | Command | Description |
 | ------- | --------- |
-| `git cherry-pick <commit-id>` | Bring only the specified commit to the current branch |
-| `git cherry-pick --continue` | Continue the cherry-pick in progress, after resolve the conflits |
+| `git cherry-pick <commit-id>` | Cherry-pick only the specified commit into the current branch |
+| `git cherry-pick --continue` | Continue the cherry-pick after resolving conflicts |
 | `git cherry-pick --abort` | Abort the cherry-pick in progress |
-| `git cherry-pick --skip` | Ignore the cherry-pick in progress |
+| `git cherry-pick --skip` | Skip the cherry-pick in progress |
 
 ### Configuration
 | Command | Description |
