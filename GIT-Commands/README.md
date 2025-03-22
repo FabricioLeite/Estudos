@@ -52,6 +52,8 @@ ___
 | `git commit --amend <commit-message>` | Changes the last commit message if not sent to remote |
 | `git commit --allow-empty -m <commit-message>` | Force creating a commit even if it's empty |
 | `git push origin <branch-name>` | Push local changes to the remote branch |
+| `git fetch` | Downloads updates from the remote repository, without modifying your current branch |
+| `git fetch --all` | Downloads updates from all configured remote repositories |
 | `git log --oneline` | Show a minimal log of commits |
 | `git diff` | Show each line of code that was created or changed and not staged yet |
 | `git diff --cached` | Show each line of code that was created or changed, staged or not |
