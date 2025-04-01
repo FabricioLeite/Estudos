@@ -7,9 +7,7 @@ WITH  my_cte  AS (
     SELECT
 		C.Id,
 		C.Country,
-		C.Birth,
-		P.Name,
+		C.Birth
     FROM
 		my_cte C --You can use the cte here like a normal table
-		INNER JOIN products P
-		ON P.customerId = C.id
+		
