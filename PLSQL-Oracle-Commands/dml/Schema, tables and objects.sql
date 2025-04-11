@@ -14,8 +14,15 @@ FROM SYS.ALL_TAB_COLUMNS COL
 INNER JOIN SYS.ALL_TABLES T ON COL.OWNER = T.OWNER 
 	AND COL.TABLE_NAME = T.TABLE_NAME
 WHERE 
-	COL.TABLE_NAME = 'PRODUCT' --case sensitive
+	COL.TABLE_NAME = 'MY_TABLE'
 ORDER BY COL.COLUMN_ID;
+
+-------------------------------
+-- View constraints in a table 
+-------------------------------
+SELECT CONSTRAINT_NAME, CONSTRAINT_TYPE
+FROM ALL_CONSTRAINTS
+WHERE TABLE_NAME = 'MY_TABLE'
 
 --------------------------------------------
 -- Search for columns throughout the schema
@@ -33,7 +40,7 @@ FROM SYS.ALL_TAB_COLUMNS COL
 INNER JOIN SYS.ALL_TABLES T ON COL.OWNER = T.OWNER 
   AND COL.TABLE_NAME = T.TABLE_NAME
 WHERE 
-	COL.COLUMN_NAME LIKE  '%PRODUCT%' --case sensitive
+	COL.COLUMN_NAME LIKE '%MY_TABLE%' --case sensitive
 ORDER BY COL.COLUMN_ID;
 
 ----------------------------------------------
@@ -50,7 +57,7 @@ JOIN
     ALL_CONSTRAINTS b ON a.R_CONSTRAINT_NAME = b.CONSTRAINT_NAME
 WHERE 
     a.CONSTRAINT_TYPE = 'R' --foreign key
-    AND b.TABLE_NAME = 'PRODUCT'; --case sensitive
+    AND b.TABLE_NAME = 'MY_TABLE';
 	
 ---------------------------------------------
 -- Search for foreign keys for a given table
@@ -72,4 +79,4 @@ JOIN
     ALL_CONS_COLUMNS D ON B.CONSTRAINT_NAME = D.CONSTRAINT_NAME AND C.POSITION = D.POSITION
 WHERE
     A.CONSTRAINT_TYPE = 'R'
-    AND A.TABLE_NAME = 'PRODUCT'; --case sensitive
+    AND A.TABLE_NAME = 'MY_TABLE';
