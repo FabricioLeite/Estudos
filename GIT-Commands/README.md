@@ -38,7 +38,7 @@ ___
 | `git branch <branch-name>`| Create a new branch based on active branch |
 | `git branch -a` | List local and remote branches |
 | `git branch -d <branch-name>`| Delete a local branch |
-| `git push origin --d <branch-name>`| Delete a remote branch |
+| `git push origin --delete <branch-name>`| Delete a remote branch |
 | `git branch -m <current-branch-name> <new-branch-name>`| Change the branch name |
 | `git checkout <branch-name>` | Switch to a branch |
 | `git checkout -b <branch-name>` | Create a new branch based on active branch and switch to it |
