@@ -1,6 +1,21 @@
 ```mermaid
 stateDiagram-v2
 direction LR
+  state Kafka Cluster {
+    direction LR
+    [*] --> subState
+    state subState {
+      direction LR
+      [*] --> subSubState
+      subSubState --> [*]
+    }
+    subState --> [*]
+  }
+```
+
+```mermaid
+stateDiagram-v2
+direction LR
   [*] --> mainState: transition
   state mainState {
     direction LR
