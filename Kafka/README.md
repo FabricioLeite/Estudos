@@ -5,7 +5,7 @@ direction LR
     direction LR
     state Broker {
       direction LR
-      [*] --> Kafka-Cluster Broker 
+      [*] --> Kafka-Cluster Broker subSubState
     }
   }
   
