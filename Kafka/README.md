@@ -4,8 +4,7 @@ direction LR
   state Kafka-Cluster {
     direction LR
     state Broker {
-      direction LR
-      [*] --> Topico-1
+      Topico-1
     }
   }
 ```
