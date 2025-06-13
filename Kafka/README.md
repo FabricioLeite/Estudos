@@ -1,15 +1,13 @@
 ```mermaid
 stateDiagram-v2
 direction LR
-  state Kafka Cluster {
+  state Kafka-Cluster {
     direction LR
-    [*] --> subState
-    state subState {
+    state Broker {
       direction LR
-      [*] --> subSubState
-      subSubState --> [*]
+      Tópico-1
+	  Tópico-2
     }
-    subState --> [*]
   }
 ```
 
