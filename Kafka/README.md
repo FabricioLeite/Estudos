@@ -6,7 +6,6 @@ direction LR
     state Broker {
       direction LR
       Tópico-1
-	  Tópico-2
     }
   }
 ```
