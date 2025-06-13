@@ -21,7 +21,7 @@ direction LR
 ```mermaid
 stateDiagram-v2
 direction LR
-  [*] --> mainState: transition
+  [*] --> subState: transition
   state mainState {
     direction LR
     [*] --> subState
