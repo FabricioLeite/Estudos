@@ -5,7 +5,7 @@ direction LR
     direction LR
     state Broker {
       direction LR
-      Tópico-1
+      [*] --> subSubState
     }
   }
 ```
