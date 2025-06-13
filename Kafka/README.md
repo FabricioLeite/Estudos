@@ -1,8 +1,7 @@
 ```mermaid
 stateDiagram-v2
-direction LR
   state Kafka-Cluster {
-    direction LR
+    
     state Broker {
       Topico-1
     }
