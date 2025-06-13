@@ -1,3 +1,4 @@
+```mermaid
 stateDiagram-v2
 direction LR
   [*] --> mainState: transition
@@ -12,3 +13,13 @@ direction LR
     subState --> [*]
   }
   mainState --> [*]
+```
+
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
