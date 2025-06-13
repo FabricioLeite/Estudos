@@ -1,19 +1,11 @@
 ```mermaid
 stateDiagram-v2
 direction LR
-  state Produtores {
-    direction LR
-    state Broker {
-      direction LR
-      [*] --> subSubState
-    }
-  }
-  
   state Kafka-Cluster {
     direction LR
     state Broker {
       direction LR
-      [*] --> subSubState
+      [*] --> Topico-1
     }
   }
 ```
