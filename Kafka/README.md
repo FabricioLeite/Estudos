@@ -3,7 +3,7 @@ stateDiagram-v2
   state Kafka-Cluster {
     
     state Broker {
-      Topico-1
+    
     }
   }
 ```
