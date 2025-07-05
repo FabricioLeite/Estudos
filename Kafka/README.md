@@ -6,11 +6,11 @@
 Este documento é um guia sobre os principais conceitos e configurações.
 
 
-## ⚙️ Arquitetura do Kafka
+# ⚙️ Arquitetura do Kafka
 ![Arquitetura do Kafka.png](img/arquitetura-kafka.png)
 
-## 🎛️ Componentes
-### 🔹 **Broker**
+# 🎛️ Componentes
+## 🔹 **Broker**
 **Definição:** Servidores que armazenam e gerenciam as partições dos tópicos no Kafka.<br/>
 **Funcionamento:** Constituem o cluster Kafka e são responsáveis por receber, armazenar e replicar os dados.<br/>
 **Características:** Escalabilidade horizontal e replicação de dados.<br/>
@@ -30,7 +30,7 @@ Este documento é um guia sobre os principais conceitos e configurações.
 | log.segment.bytes | Tamanho máximo em bytes de cada segmento de log antes que um novo segmento seja criado. |
 | num.recovery.threads.per.data.dir | Número de threads de recuperação por diretório de log. |
 
-### 🔹 **Tópico**
+## 🔹 **Tópico**
 **Definição:** Canais de comunicação categorizados para dados no Kafka.<br/>
 **Funcionamento:** Produtores enviam mensagens para tópicos, essas mensagens são consumidas por consumidores. Tópicos podem ter múltiplas partições para distribuição e paralelismo, e cada partição possui vários offsets. Cada partição só pode ser consumida por um consumidor.<br/>
 **Características:** Flexibilidade na criação e configuração e suporta retenção de mensagens por tempo ou tamanho.<br/>
@@ -52,15 +52,71 @@ Este documento é um guia sobre os principais conceitos e configurações.
 | message.timestamp.type | Tipo de timestamp a ser usado para mensagens. Pode ser "CreateTime" ou "LogAppendTime". |
 | message.timestamp.difference.ms | O intervalo máximo de tempo em milissegundos pelos quais o timestamp da mensagem pode ser mais recente do que o tempo de registro do broker. |
 
-## 🎮 **Comandos**
-| Comando | Descrição |
+### **Principais comandos do tópico**
+Cria um novo tópico especificando algumas configurações:
+```bash
+kafka-topics.sh --create --bootstrap-server <host_bootstrap>:<porta_bootstrap> --replication-factor <fator_replicaçao> --partitions <num_partições> --topic <nome_tópico>
+```
+Lista todos os tópicos disponíveis no cluster:
+```bash
+kafka-topics.sh --list --bootstrap-server <host_bootstrap>:<porta_bootstrap>
+```
+Fornece informações detalhadas sobre um tópico específico, incluindo partições e réplicas:
+```bash
+kafka-topics.sh --describe --bootstrap-server <host_bootstrap>:<porta_bootstrap> --topic <nome_tópico>
+```
+Exclui o tópico especificado:
+```bash
+kafka-topics.sh --delete --bootstrap-server <host_bootstrap>:<porta_bootstrap> --topic <nome_tópico>
+```
+Altera a configuração de um tópico, como políticas de retenção ou políticas de limpeza:
+```bash
+kafka-configs.sh --alter --bootstrap-server <host_bootstrap>:<porta_bootstrap> --entity-type topics --entity-name <nome_tópico> --add-config retention.ms=<tempo_retenção_em_ms>
+```
+Aumenta ou diminui o número de partições para um tópico:
+```bash
+kafka-topics.sh --alter --bootstrap-server <host_bootstrap>:<porta_bootstrap> --topic <nome_tópico> --partitions <novo_número_partições>
+```
+
+## 🔹 **Produtor**
+**Definição:** Responsável por enviar dados para o Kafka.<br/>
+**Funcionamento:** Envia mensagens para tópicos Kafka de forma assíncrona ou síncrona.<br/>
+**Características:** Alta taxa de transferência, tolerância a falhas, configurações flexíveis.<br/>
+**Uso P**rático: Aplicativos web, IoT, sistemas distribuídos.<br/>
+**Benefícios:** Facilita a ingestão de dados em tempo real, escalabilidade, integração fácil.<br/>
+
+| Configuração | Descrição |
 | ------- | --------- |
-| `kafka-topics.sh --create --bootstrap-server <host_bootstrap>:<porta_bootstrap> --replication-factor <fator_replicaçao> --partitions <num_partições> --topic <nome_tópico>` | Cria um novo tópico com as configurações especificadas. |
-| `kafka-topics.sh --list --bootstrap-server <host_bootstrap>:<porta_bootstrap>` | Lista todos os tópicos disponíveis no cluster. |
-| `kafka-topics.sh --describe --bootstrap-server <host_bootstrap>:<porta_bootstrap> --topic <nome_tópico>` | Fornece informações detalhadas sobre um tópico específico, incluindo partições e réplicas. |
-| `kafka-topics.sh --delete --bootstrap-server <host_bootstrap>:<porta_bootstrap> --topic <nome_tópico>` | Exclui o tópico especificado. |
-| `kafka-configs.sh --alter --bootstrap-server <host_bootstrap>:<porta_bootstrap> --entity-type topics --entity-name <nome_tópico> --add-config retention.ms=<tempo_retenção_em_ms>` | Altera a configuração de um tópico, como políticas de retenção ou políticas de limpeza. |
-| `kafka-topics.sh --alter --bootstrap-server <host_bootstrap>:<porta_bootstrap> --topic <nome_tópico> --partitions <novo_número_partições>` | Aumenta ou diminui o número de partições para um tópico. |
+| bootstrap.servers | Lista de servidores Kafka utilizados para inicializar a conexão do produtor com o cluster. |
+| acks | Define o número de réplicas em que a mensagem deve ser confirmada como gravada antes de o produtor receber uma resposta. |
+| retries | Número máximo de tentativas de reenvio em caso de falha no envio da mensagem. |
+| batch.size | Tamanho máximo em bytes de cada lote de mensagens a serem enviadas ao broker. |
+| linger.ms | Tempo máximo em milissegundos que o produtor aguardará para enviar um lote completo de mensagens. |
+| buffer.memory | Tamanho total de memória em bytes a ser utilizado para armazenar as mensagens antes do envio ao broker. |
+| key.serializer | Classe responsável por serializar a chave da mensagem. |
+| value.serializer | Classe responsável por serializar o valor da mensagem. |
+
+### **Principais comandos do produtor**
+Inicia um produtor de console que envia mensagens para o tópico Kafka especificado:
+```bash
+kafka-console-producer.sh --broker-list <lista_brokers> --topic <nome_tópico>
+```
+Inicia um produtor de console que envia mensagens com chaves para o tópico Kafka especificado:
+```bash
+kafka-console-producer.sh --broker-list <lista_brokers> --topic <nome_tópico> --property parse.key=true --property key.separator=<separador_chave>
+```
+Testa o desempenho do produtor enviando um número específico de registros para o tópico Kafka especificado:
+```bash
+kafka-producer-perf-test.sh --producer.config <arquivo_config_producer> --topic <nome_tópico> --num-records <num_registros> --record-size <tamanho_registro>
+```
+Inicia um produtor de console verificável que envia mensagens para o tópico Kafka especificado:
+```bash
+kafka-verifiable-producer.sh --broker-list <lista_brokers> --topic <nome_tópico> --max-messages <max_mensagens>
+```
+Inicia um produtor de console que envia mensagens Avro para o tópico Kafka especificado:
+```bash
+kafka-avro-console-producer --broker-list <lista_brokers> --topic <nome_tópico> --property value.schema='<schema_avro>'
+```
 
 <br/><br/>
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&logoColor=white&color=0D76A8)](https://www.linkedin.com/in/leitefabricio)
