@@ -1,10 +1,7 @@
 <img src="img/kafka-logo.svg" alt="Logo do Apache Kafka" style="width:4em;">
 
 # **Apache Kafka**
-
-
 Este documento é um guia sobre os principais conceitos e configurações.
-
 
 # ⚙️ Arquitetura do Kafka
 ![Arquitetura do Kafka.png](img/arquitetura-kafka.png)
@@ -52,8 +49,10 @@ Este documento é um guia sobre os principais conceitos e configurações.
 | message.timestamp.type | Tipo de timestamp a ser usado para mensagens. Pode ser "CreateTime" ou "LogAppendTime". |
 | message.timestamp.difference.ms | O intervalo máximo de tempo em milissegundos pelos quais o timestamp da mensagem pode ser mais recente do que o tempo de registro do broker. |
 
-### **Principais comandos do tópico**
-Cria um novo tópico especificando algumas configurações:
+<details>
+    <summary><strong style="font-size:1.2em;">🎮 <b>Principais comandos do tópico</b></strong></summary><br/>
+
+Cria um novo tópico especificando algumas configurações:    
 ```bash
 kafka-topics.sh --create --bootstrap-server <host_bootstrap>:<porta_bootstrap> --replication-factor <fator_replicaçao> --partitions <num_partições> --topic <nome_tópico>
 ```
@@ -77,6 +76,7 @@ Aumenta ou diminui o número de partições para um tópico:
 ```bash
 kafka-topics.sh --alter --bootstrap-server <host_bootstrap>:<porta_bootstrap> --topic <nome_tópico> --partitions <novo_número_partições>
 ```
+</details>
 
 ## 🔹 **Produtor**
 **Definição:** Responsável por enviar dados para o Kafka.<br/>
@@ -96,7 +96,9 @@ kafka-topics.sh --alter --bootstrap-server <host_bootstrap>:<porta_bootstrap> --
 | key.serializer | Classe responsável por serializar a chave da mensagem. |
 | value.serializer | Classe responsável por serializar o valor da mensagem. |
 
-### **Principais comandos do produtor**
+<details>
+    <summary><strong style="font-size:1.2em;">🎮 <b>Principais comandos do produtor</b></strong></summary><br/>
+
 Inicia um produtor de console que envia mensagens para o tópico Kafka especificado:
 ```bash
 kafka-console-producer.sh --broker-list <lista_brokers> --topic <nome_tópico>
@@ -117,6 +119,7 @@ Inicia um produtor de console que envia mensagens Avro para o tópico Kafka espe
 ```bash
 kafka-avro-console-producer --broker-list <lista_brokers> --topic <nome_tópico> --property value.schema='<schema_avro>'
 ```
+</details>
 
 <br/><br/>
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&logoColor=white&color=0D76A8)](https://www.linkedin.com/in/leitefabricio)
