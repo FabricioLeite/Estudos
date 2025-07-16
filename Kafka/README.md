@@ -1,6 +1,4 @@
-<div style="height: 6em; background-color: #ffffff; display: inline-block; border-radius: 5px; padding: .7em">
-<img src="img/apache-kafka-logo.png"/>
-</div><br/><br/>
+<img src="img/apache-kafka-logo.png" style="height: 7em; background-color: white; padding: 1em;"/><br/>
 
 Este documento é um guia sobre os principais conceitos e configurações.
 
@@ -131,8 +129,9 @@ kafka-avro-console-producer --broker-list <lista_brokers> --topic <nome_tópico>
 
 ![Consumidor do Kafka.png](img/consumidor.png)
 
-> ⚠️ Sempre após o consmidor processar a mensagem, é preciso realizar o processo de `commit`, ou seja, informar para o Kafka que a mensagem foi lida. Caso o `commit` não seja feito, o Kafka após um período configurado disponibilizará a mensagem novamente para ser consumida.<br/>
+> ⚠️ Sempre após o consumidor processar a mensagem, é preciso realizar o processo de `commit`, ou seja, informar para o Kafka que a mensagem foi lida. Caso o `commit` não seja feito, o Kafka após um período configurado disponibilizará a mensagem novamente para ser consumida.<br/>
 Através da propriedade `enable.auto.commit` é possível configurar o `commit` automático após a leitura das mensagens, para que essa ação não precise ficar na mão do desenvolvedor, porém é uma prática arriscada pois caso a mensagem não tenha sido processada pelo consumer, ela será perdida.
+<br/>
 
 | Configuração | Descrição |
 | ------- | --------- |
@@ -234,9 +233,8 @@ kafka-consumer-groups.sh --bootstrap-server <lista_brokers> --reset-offsets --gr
 </details>
 
 ## 🔷 **Zookeeper**
-<div style="height: 6em; background-color: #ffffff; display: inline-block; border-radius: 5px; padding: .7em">
-<img src="img/apache-zookeeper-logo.png"/>
-</div><br/><br/>
+<img src="img/apache-zookeeper-logo.png" style="height: 7em; background-color: white; padding: 1em;"/>
+<br/>
 
 **Definição:** Ferramenta de coordenação distribuída amplamente utilizada em sistemas distribuídos.<br/>
 **Coordenação de Broker:** Eleger líderes de partição. Manter informações sobre brokers ativos e líderes de partição.<br/>
@@ -247,14 +245,14 @@ kafka-consumer-groups.sh --bootstrap-server <lista_brokers> --reset-offsets --gr
 
 | Configuração | Descrição |
 | ------- | --------- |
-| `dataDir:` | Diretório no qual os dados do Zookeeper serão armazenados. |
-| `clientPort:` | Porta na qual o Zookeeper aceitará conexões de clientes. |
-| `tickTime:` | Intervalo de tempo básico em milissegundos usado pelo Zookeeper para sincronização de relógio. |
-| `initLimit:` | Número máximo de ticks do Zookeeper que um seguidor pode estar atrás do líder. |
-| `syncLimit:` | Número máximo de ticks do Zookeeper que um seguidor pode estar atrás do líder em atualizações de leitura. |
-| `maxClientCnxns:` | Número máximo de conexões simultâneas permitidas a partir de um único endereço IP. |
-| `autopurge.snapRetainCount:` | Número de arquivos de snapshot a serem retidos após a purga automática. |
-| `autopurge.purgeInterval:` | Intervalo de tempo entre duas operações de purga automática em milissegundos. |
+| `dataDir` | Diretório no qual os dados do Zookeeper serão armazenados. |
+| `clientPort` | Porta na qual o Zookeeper aceitará conexões de clientes. |
+| `tickTime` | Intervalo de tempo básico em milissegundos usado pelo Zookeeper para sincronização de relógio. |
+| `initLimit` | Número máximo de ticks do Zookeeper que um seguidor pode estar atrás do líder. |
+| `syncLimit` | Número máximo de ticks do Zookeeper que um seguidor pode estar atrás do líder em atualizações de leitura. |
+| `maxClientCnxns` | Número máximo de conexões simultâneas permitidas a partir de um único endereço IP. |
+| `autopurge.snapRetainCount` | Número de arquivos de snapshot a serem retidos após a purga automática. |
+| `autopurge.purgeInterval` | Intervalo de tempo entre duas operações de purga automática em milissegundos. |
 
 <br/><br/>
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&logoColor=white&color=0D76A8)](https://www.linkedin.com/in/leitefabricio)
