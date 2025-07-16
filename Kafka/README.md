@@ -1,4 +1,4 @@
-<img src="img/apache-kafka-logo.png"/><br/>
+<img src="img/apache-kafka-logo.png" style="height: 6em;"/><br/>
 
 Este documento é um guia sobre os principais conceitos e configurações.
 
@@ -233,7 +233,7 @@ kafka-consumer-groups.sh --bootstrap-server <lista_brokers> --reset-offsets --gr
 </details>
 
 ## 🔷 **Zookeeper**
-<img src="img/apache-zookeeper-logo.png"/>
+<img src="img/apache-zookeeper-logo.png" style="height: 6em;"/>
 <br/>
 
 **Definição:** Ferramenta de coordenação distribuída amplamente utilizada em sistemas distribuídos.<br/>
