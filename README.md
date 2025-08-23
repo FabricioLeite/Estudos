@@ -3,9 +3,9 @@ Esse repositório contém resumos sobre alguns dos meus estudos e também trecho
 
 # Temas
 ## 🤖 Desenvolvimento de software
-- <img src="img/git-logo.png" style="height: 1.2em;"/> [GIT](Git/README.md) <br/>
+- <img src="img/git-logo.png" style="height: 1.2em;"/> [GIT](Git/README.md)<br/>
 - <img src="img/kafka-logo.svg" style="height: 1.2em;"/> [Apache Kafka](Apache-Kafka/README.md)<br/>
 - <img src="img/database-icone.svg" style="height: 1.2em;"/> [Oracle PL/SQL](Oracle-PLSQL/README.md)<br/>
 
 ## 📊 Negócios
-- <img src="img/flow-chart.svg" style="height: 1.2em;"/> Mapeamento de processos<br/>
+- <img src="img/flow-chart.svg" style="height: 1.2em;"/> [Mapeamento de processos](MapeamentoProcessos/README.md)<br/>

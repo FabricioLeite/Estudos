@@ -1,6 +1,6 @@
 # Tipos de comandos SQL
 
-## 👁️ DML - Data Manipulation Language
+## 🔍 DML - Data Manipulation Language
 Comandos que manipulam dados nas tabelas, não altera a estrutura das tabelas.<br/>
 São comandos que normalmente precisam de `COMMIT` ou `ROLLBACK` para confirmar ou desfazer.
 
