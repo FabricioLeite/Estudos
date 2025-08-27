@@ -1,5 +1,3 @@
-[Home](../README.md) » <img src="../img/database-icone.svg" style="height: 1.2em;"/> [Oracle PL/SQL](./README.md) » Tipos de comandos
-
 # Tipos de comandos SQL
 
 ## 🔍 DML - Data Manipulation Language
