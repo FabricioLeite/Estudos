@@ -1,6 +1,6 @@
 <img src="img/apache-kafka-logo.png" style="height: 6em;"/><br/>
 
-Este documento é um guia sobre os principais conceitos e configurações.
+Resumo dos principais conceitos e configurações.
 
 # ⚙️ Arquitetura do Kafka
 ![Arquitetura do Kafka.png](img/arquitetura-kafka.png)
