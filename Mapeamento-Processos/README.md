@@ -89,7 +89,7 @@ Os elementos estão organizaados em 4 tipos:
 |                        | **Raia (Raia)**                         | Subdivisão da piscina (papel, função, departamento).<br/>As raias podem ser funções, locais, departamentos etc, mas se uma raia representar uma função, todas as demais também deverão representar funções;<br/>Uma não pode representar função e outra departamento por exemplo.|
 
 ### 📷 Exemplos
-<img src="img/eventos.png" style="width: 100%; max-width: 400px;"/>
+<img src="img/eventos.png" style="height: 12em"/>
 
 <img src="img/eventos-inicio.png" style="width: 100%; max-width: 600px;"/>
 
