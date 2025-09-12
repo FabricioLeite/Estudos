@@ -86,6 +86,13 @@ Os elementos estão organizaados em 4 tipos:
 |                        | **Grupo (Group)**                       | Agrupa elementos relacionados, sem alterar o fluxo.                               |
 |                        | **Anotação de Texto (Text Annotation)** | Observações ou notas explicativas.                                                |
 | **Swimlanes**          | **Piscina (Poll)**                      | Representa um participante (organização, sistema, entidade).                      |
-|                        | **Raia (Raia)**                         | Subdivisão da piscina (papel, função, departamento).                              |
+|                        | **Raia (Raia)**                         | Subdivisão da piscina (papel, função, departamento).<br/>As raias podem ser funções, locais, departamentos etc, mas se uma raia representar uma função, todas as demais também deverão representar funções;<br/>Uma não pode representar função e outra departamento por exemplo.|
 
-> ⚠️ As raias podem ser funções, locais, departamentos etc, mas se uma raia representar uma função, todas as demais também deverão representar funções, uma não pode representar função e outra departamento por exemplo.<br/>
+### 📷 Exemplos
+<img src="img/eventos.png" style="width: 100%; max-width: 400px;"/>
+
+<img src="img/eventos-inicio.png" style="width: 100%; max-width: 600px;"/>
+
+<img src="img/eventos-intermediarios.png" style="width: 100%; max-width: 600px;"/>
+
+<img src="img/atividades.png" style="width: 100%; max-width: 600px;"/>

@@ -1,0 +1,2 @@
+# Abstract Factory
+Fornece um contrato para que você crie famílias de objetos que são relacionados, ou seja, há um contrato para uma fábrica e pode-se criar várias fábricas de acordo com as necessidades dos objetos a serem criados.

@@ -88,3 +88,6 @@ ___
 | `git config --global --unset user.name` | Erase user name configuration |
 | `git config --global --unset user.password` | Erase user password configuration |
 | `git config --global --edit` | Configure all global configurations |
+
+<br/><br/>
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-Profile-informational?style=flat&logo=linkedin&logoColor=white&color=0D76A8)](https://www.linkedin.com/in/leitefabricio)
